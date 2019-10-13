@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  sonarqube-server:
+    image: sonarqube:${SONARQUBE_VERSION}
+    ports:
+      - 9000:9000
