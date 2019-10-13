@@ -3,5 +3,16 @@ version: '3'
 services:
   sonarqube-server:
     image: sonarqube:${SONARQUBE_VERSION}
+    environment:
+      sonar.jdbc.username: postgres
+      sonar.jdbc.password: postgrespw
+      sonar.jdbc.url: jdbc:postgresql://sonarqube-db/sonarqube
     ports:
       - 9000:9000
+
+  sonarqube-db:
+    image: postgres:${POSTGRES_VERSION}
+    environment:
+      POSTGRES_DB: sonarqube
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgrespw

@@ -9,7 +9,7 @@ git submodule add https://github.com/hpcsc/sonarqube
 git submodule update --init
 ```
 
-This sonarqube submodule expects parent project to provide 1 environment variables `SONARQUBE_VERSION`
+This sonarqube submodule expects parent project to provide 2 environment variables `SONARQUBE_VERSION` and `POSTGRES_VERSION`
 
 When using with parent project, `docker-compose.sonarqube.yml` needs to be passed in explicitly to docker-compose command (or set `COMPOSE_FILE` variable)
 
